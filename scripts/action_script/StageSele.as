@@ -10,7 +10,7 @@ package action_script
    public class StageSele
    {
       
-      private static const StageFrameNum:int = 36;
+      private static const StageFrameNum:int = 37;
       
       private static const ImageFrameInvalid:int = StageFrameNum + 1;
       
@@ -87,8 +87,10 @@ package action_script
       private static const StageID_BFpot:int = 34;
       
       private static const StageID_BFvol:int = 35;
+	  
+	  private static const StageID_BFrrg:int = 36;
       
-      public static const StageIDNum:int = 36;
+      public static const StageIDNum:int = 37;
       
       private static const StageIDInvlaid:int = -1;
       
@@ -100,14 +102,14 @@ package action_script
       
       private static const NewIconMax1:int = 33;
       
-      private static const NewIconMax2:int = 9;
+      private static const NewIconMax2:int = 12;
       
       private static const kGotoSelectedStatusTime:int = 2000;
       
       //////////
 	  // Commenting things that will go unused now
 	  //private static const StageIdTable:Array = [StageID_BFten,StageID_BFsei,StageID_BFkoh,StageID_BFpln,StageID_BFrck,StageID_BFrcn,StageID_BFnmc,StageID_BFnmb,StageID_BFtre,StageID_BFlnd,StageID_BFcel,StageID_BFceb,StageID_BFtwh,StageID_BFtwn,StageID_BFtwc,StageID_DMtwh,StageID_BFsin,StageID_BFsky,StageID_BFlnc,StageID_BFhel,StageID_BFkai,StageID_BFspe,StageID_BFspv,StageID_BFund,StageID_BFice,StageID_BFtfl,StageID_BFgen,StageID_BFtok];
-      
+      	  
       //private static const StageIdTable_DLC2:Array = [StageID_BFsmt];
       
       //private static const StageIdTable_DLC4:Array = [StageID_BFtwf];
@@ -115,14 +117,18 @@ package action_script
       //private static const StageIdTable_DLC8:Array = [StageID_BFpot];
       
       //private static const StageIdTable_DLC13:Array = [StageID_BFvol];
+	  
+	  //private static const StageIdTable_DLC16:Array = [StageID_BFrrg];
       
-      private static const StageIdInfo:Array = [ImageFrameInvalid,ImageFrameInvalid,1,2,3,4,5,7,6,10,11,12,8,9,13,15,14,16,17,19,20,21,22,23,24,18,26,25,27,28,30,29,31,32,33,34];
+      private static const StageIdInfo:Array = [ImageFrameInvalid,ImageFrameInvalid,1,2,3,4,5,7,6,10,11,12,8,9,13,15,14,16,17,19,20,21,22,23,24,18,26,25,27,28,30,29,31,32,33,34,35];
       
       //private static const LocalBattle_StageIdTable:Array = [StageID_BFten,StageID_BFnmc,StageID_BFsei,StageID_BFcel,StageID_DMtwh,StageID_BFkai,StageID_BFtfl];
       
       //private static const LocalBattle_StageIdTable_DLC2:Array = [StageID_BFsmt];
       
       //private static const LocalBattle_StageIdTable_DLC8:Array = [StageID_BFpot];
+	  
+	  //private static const LocalBattle_StageIdTable_DLC16:Array = [StageID_BFrrg];
 	  //////////
       
       private static const StageNameInvalid:String = "???";
@@ -162,8 +168,10 @@ package action_script
       public static const ReceiveType_DlcFlag_8:int = ReceiveType_DlcFlag_4 + 1;
       
       public static const ReceiveType_DlcFlag_13:int = ReceiveType_DlcFlag_8 + 1;
+	  
+	  public static const ReceiveType_DlcFlag_16:int = ReceiveType_DlcFlag_13 + 1;
       
-      public static const ReceiveTypeNum:int = ReceiveType_DlcFlag_13 + 1;
+      public static const ReceiveTypeNum:int = ReceiveType_DlcFlag_16 + 1;
       
       private static const SendType_DecideTime:int = 0;
       
@@ -275,6 +283,10 @@ package action_script
 			 else if (dlc == 13)
 			 {
 				has_dlc = m_callback.GetUserDataInt(ReceiveType_DlcFlag_13);
+			 }
+			 else if (dlc == 16)
+			 {
+				has_dlc = m_callback.GetUserDataInt(ReceiveType_DlcFlag_16);
 			 }
 
 			 if (has_dlc != 0)
@@ -401,7 +413,7 @@ package action_script
 		 if(m_callback.GetUserDataInt(ReceiveTypeMode) == 1)
 		 {
 			my_stages = all_local_stages;		
-			local_original_mode = (my_stages.length >= 7 && my_stages.length <= 9);
+			local_original_mode = (my_stages.length >= 7 && my_stages.length <= 10);
 		 }
 		 else
 		 {
@@ -426,27 +438,27 @@ package action_script
       {
          var _loc2_:int = 0;
          var _loc3_:int = 0;
-         var _loc18_:Boolean = false;
-         var _loc19_:int = 0;
-         var _loc20_:Bitmap = null;
-         var _loc21_:String = null;
-         var _loc22_:int = 0;
-         var _loc23_:MovieClip = null;
+         var _loc19_:Boolean = false;
+         var _loc20_:int = 0;
+         var _loc21_:Bitmap = null;
+         var _loc22_:String = null;
+         var _loc23_:int = 0;
          var _loc24_:MovieClip = null;
-         var _loc25_:int = 0;
+         var _loc25_:MovieClip = null;
          var _loc26_:int = 0;
-         var _loc27_:Boolean = false;
-         var _loc28_:int = 0;
-         var _loc29_:Boolean = false;
-         var _loc30_:int = 0;
+         var _loc27_:int = 0;
+         var _loc28_:Boolean = false;
+         var _loc29_:int = 0;
+         var _loc30_:Boolean = false;
          var _loc31_:int = 0;
          var _loc32_:int = 0;
          var _loc33_:int = 0;
+         var _loc34_:int = 0;
          _loc2_ = 0;
-         while(ReceiveTypeNum > _loc2_)
+          while(ReceiveTypeNum > _loc2_)
          {
-            _loc18_ = m_callback.GetUserDataValidFlag(_loc2_);
-            if(!_loc18_)
+            _loc19_ = m_callback.GetUserDataValidFlag(_loc2_);
+            if(!_loc19_)
             {
                return;
             }
@@ -481,6 +493,7 @@ package action_script
          var _loc8_:int = m_callback.GetUserDataInt(ReceiveType_DlcFlag_4);
          var _loc9_:int = m_callback.GetUserDataInt(ReceiveType_DlcFlag_8);
          var _loc10_:int = m_callback.GetUserDataInt(ReceiveType_DlcFlag_13);
+		 var _loc11_:int = m_callback.GetUserDataInt(ReceiveType_DlcFlag_16);
          if(_loc4_ == 0)
          {
             if(_loc6_ == 1)
@@ -499,6 +512,10 @@ package action_script
             {
                m_stage_table = m_stage_table.concat(StageIdTable_DLC13);
             }
+			if(_loc11_ == 1)
+            {
+               m_stage_table = m_stage_table.concat(StageIdTable_DLC16);
+            }
          }
          else if(_loc4_ == 1)
          {
@@ -509,6 +526,10 @@ package action_script
             if(_loc9_ == 1)
             {
                m_stage_table = m_stage_table.concat(LocalBattle_StageIdTable_DLC8);
+            }
+			if(_loc11_ == 1)
+            {
+               m_stage_table = m_stage_table.concat(LocalBattle_StageIdTable_DLC16);
             }
          }*/
 		 var end_index:int = start_index + NewIconMax1;
@@ -527,18 +548,18 @@ package action_script
 		 //trace("Columns = " + m_index_num_column);	
 		 //////////
 		 
-         var _loc11_:int = 0;
+         var _loc12_:int = 0;
          _loc2_ = 0;
          while(m_stage_table.length > _loc2_)
          {
-            _loc11_ = StartSelectIndex + _loc2_;
-            _loc11_ = _loc11_ % m_stage_table.length;
-            if(!checkUnlockStage(calcStageId(_loc11_)))
+            _loc12_ = StartSelectIndex + _loc2_;
+            _loc12_ = _loc12_ % m_stage_table.length;
+            if(!checkUnlockStage(calcStageId(_loc12_)))
             {
                _loc2_++;
                continue;
             }
-            m_select_index = _loc11_;
+            m_select_index = _loc12_;
             break;
          }
          m_timeline.cmn_m_frame.visible = true;
@@ -552,25 +573,25 @@ package action_script
          _loc2_ = 0;
          while(m_stage_table.length > _loc2_)
          {
-            _loc19_ = calcStageId(_loc2_);
-            if(_loc19_ != StageIDInvlaid)
+            _loc20_ = calcStageId(_loc2_);
+            if(_loc20_ != StageIDInvlaid)
             {
-               _loc20_ = new Bitmap(null);
-               //////////_loc21_ = m_callback.GetUserDataString(ReceiveTypeImageStrStart + _loc19_);
-			    if (_loc19_ >= StageIDNum && _loc19_ < SSNum)
+               _loc21_ = new Bitmap(null);
+               //////////_loc22_ = m_callback.GetUserDataString(ReceiveTypeImageStrStart + _loc20_);
+			    if (_loc20_ >= StageIDNum && _loc20_ < SSNum)
 			   {
-				   _loc21_ = XV2Patcher.GetStageImageString(_loc19_);
+				   _loc22_ = XV2Patcher.GetStageImageString(_loc20_);
 			   }
 			   else
 			   {
-				   _loc21_ = m_callback.GetUserDataString(ReceiveTypeImageStrStart + _loc19_)
+				   _loc22_ = m_callback.GetUserDataString(ReceiveTypeImageStrStart + _loc20_)
 			   }
 			   //////////
 			   
-               IggyFunctions.setTextureForBitmap(_loc20_,_loc21_);
-               _loc20_.scaleX = 1024 / _loc20_.width;
-               _loc20_.scaleY = 256 / _loc20_.height;
-               m_stage_image[_loc19_] = _loc20_;
+               IggyFunctions.setTextureForBitmap(_loc21_,_loc22_);
+               _loc21_.scaleX = 1024 / _loc21_.width;
+               _loc21_.scaleY = 256 / _loc21_.height;
+               m_stage_image[_loc20_] = _loc21_;
             }
             _loc2_++;
          }
@@ -584,96 +605,96 @@ package action_script
 		 while (SSNum > _loc2_)
 		 //////////
          {
-            //////////_loc22_ = m_callback.GetUserDataInt(ReceiveTypeSelectedStart + _loc2_);
+            //////////_loc23_ = m_callback.GetUserDataInt(ReceiveTypeSelectedStart + _loc2_);
 			if (_loc2_ >= StageIDNum)
 			{
-				_loc22_ = XV2Patcher.StageHasBeenSelectedBefore(_loc2_);
+				_loc23_ = XV2Patcher.StageHasBeenSelectedBefore(_loc2_);
 			}
 			else
 			{
-				_loc22_ = m_callback.GetUserDataInt(ReceiveTypeSelectedStart + _loc2_);
+				_loc23_ = m_callback.GetUserDataInt(ReceiveTypeSelectedStart + _loc2_);
 			}
 			//////////
-            m_selected_stage[_loc2_] = _loc22_;
+            m_selected_stage[_loc2_] = _loc23_;
             m_unlock_flag[_loc2_] = false;
             _loc2_++;
          }
-         var _loc12_:MovieClip = m_timeline.stage_new;
-         var _loc13_:MovieClip = null;
+         var _loc13_:MovieClip = m_timeline.stage_new;
+         var _loc14_:MovieClip = null;
          _loc2_ = 0;
          while(_loc2_ < m_new_icon_max)
          {
-            _loc13_ = _loc12_["stage_new_" + _loc2_];
-            _loc13_.visible = false;
+            _loc14_ = _loc13_["stage_new_" + _loc2_];
+            _loc14_.visible = false;
             _loc2_++;
          }
          m_timeline.stage_new.gotoAndPlay("start");
          m_timeline.stage_new.visible = true;
-         var _loc14_:MovieClip = m_timeline.stage_select;
+         var _loc15_:MovieClip = m_timeline.stage_select;
          _loc3_ = 0;
          while(m_index_num_column > _loc3_)
          {
-            _loc23_ = _loc14_["stage_icn_set" + _loc3_];
+            _loc24_ = _loc15_["stage_icn_set" + _loc3_];
             _loc2_ = 0;
             while(IndexNumRow > _loc2_)
             {
-               _loc24_ = _loc23_["nest_stage_sel" + (_loc2_ + 1)];
+               _loc25_ = _loc24_["nest_stage_sel" + (_loc2_ + 1)];
 			   //////////
-			   _loc24_.visible = true;
+			   _loc25_.visible = true;
 			   //////////
-               _loc25_ = calcStageListIndex(_loc2_,_loc3_);
-               _loc26_ = calcStageId(_loc25_);
-               _loc13_ = null;
-               if(_loc26_ != StageIDInvlaid)
+               _loc26_ = calcStageListIndex(_loc2_,_loc3_);
+               _loc27_ = calcStageId(_loc26_);
+               _loc14_ = null;
+               if(_loc27_ != StageIDInvlaid)
                {
-                  _loc13_ = _loc12_["stage_new_" + _loc25_];
+                  _loc14_ = _loc13_["stage_new_" + _loc26_];
                }
-               if(_loc26_ == StageIDInvlaid)
+               if(_loc27_ == StageIDInvlaid)
                {
-                  _loc24_.visible = false;
-                  if(_loc13_)
+                  _loc25_.visible = false;
+                  if(_loc14_)
                   {
-                     _loc13_.visible = false;
+                     _loc14_.visible = false;
                   }
                }
                else
                {
-                  _loc27_ = false;
-                  if(_loc26_ != StageIDInvlaid)
+                  _loc28_ = false;
+                  if(_loc27_ != StageIDInvlaid)
                   {
-                     _loc30_ = m_stage_table[_loc25_];
-                     _loc31_ = m_selected_stage[_loc30_];
-                     if(m_selected_stage[m_stage_table[_loc25_]] == 1)
+                     _loc31_ = m_stage_table[_loc26_];
+                     _loc32_ = m_selected_stage[_loc31_];
+                     if(m_selected_stage[m_stage_table[_loc26_]] == 1)
                      {
-                        _loc27_ = false;
+                        _loc28_ = false;
                      }
                      else
                      {
-                        _loc27_ = true;
+                        _loc28_ = true;
                      }
                   }
-                  _loc28_ = getStageFrame(_loc30_);
-                  _loc24_.btn_act.img_icon_frm.gotoAndStop(_loc28_);
+                  _loc29_ = getStageFrame(_loc31_);
+                  _loc25_.btn_act.img_icon_frm.gotoAndStop(_loc29_);
 				  //////////
-				  setImage(_loc24_.btn_act, _loc26_);
+				  setImage(_loc25_.btn_act, _loc27_);
 				  //////////
-                  _loc29_ = checkUnlockStage(_loc26_);
-                  if(!_loc29_)
+                  _loc30_ = checkUnlockStage(_loc27_);
+                  if(!_loc30_)
                   {
-                     _loc24_.gotoAndStop("lock");
-                     _loc27_ = false;
+                     _loc25_.gotoAndStop("lock");
+                     _loc28_ = false;
                   }
                   else
                   {
-                     _loc24_.btn_act.img_icon_frm.gotoAndStop(_loc28_);
-                     _loc24_.gotoAndStop("off");
+                     _loc25_.btn_act.img_icon_frm.gotoAndStop(_loc29_);
+                     _loc25_.gotoAndStop("off");
                   }
-                  if(_loc13_)
+                  if(_loc14_)
                   {
-                     _loc13_.visible = _loc27_;
-                     _loc32_ = !!_loc27_?1:0;
-                     _loc33_ = m_stage_table[_loc25_];
-                     m_unlock_flag[_loc33_] = _loc32_;
+                     _loc14_.visible = _loc28_;
+                     _loc33_ = !!_loc28_?1:0;
+                     _loc34_ = m_stage_table[_loc26_];
+                     m_unlock_flag[_loc34_] = _loc33_;
                   }
                }
                _loc2_++;
@@ -690,12 +711,12 @@ package action_script
 			for (i = m_index_num_column; i < IndexNumColumn_All; i++)
 			{
 				var row:int;
-				_loc23_ = _loc14_["stage_icn_set" + i];
+				_loc24_ = _loc15_["stage_icn_set" + i];
 				
 				for (row = 0; row < IndexNumRow; row++)
 				{
-					_loc24_ = _loc23_["nest_stage_sel" + (row + 1)];
-					_loc24_.visible = false;
+					_loc25_ = _loc24_["nest_stage_sel" + (row + 1)];
+					_loc25_.visible = false;
 				}
 			}
 		 }
@@ -708,20 +729,20 @@ package action_script
 		 
 		 //////////
 		 
-         var _loc15_:MovieClip = m_timeline.stage_img;
-         var _loc16_:int = calcStageId(m_select_index);
-         _loc15_.sys_stagename.sys_stagename.autoSize = "left";
-         _loc15_.sys_stagename.sys_stagename.wordWrap = false;
-         _loc15_.sys_stagename.sys_stagename.htmlText = getStageName(_loc16_);
-         var _loc17_:int = m_callback.GetUserDataInt(ReceiveTypeTime);
-         if(_loc17_ < 0)
+         var _loc16_:MovieClip = m_timeline.stage_img;
+         var _loc17_:int = calcStageId(m_select_index);
+         _loc16_.sys_stagename.sys_stagename.autoSize = "left";
+         _loc16_.sys_stagename.sys_stagename.wordWrap = false;
+         _loc16_.sys_stagename.sys_stagename.htmlText = getStageName(_loc17_);
+         var _loc18_:int = m_callback.GetUserDataInt(ReceiveTypeTime);
+         if(_loc18_ < 0)
          {
             m_timeline.timer.visible = false;
          }
          else
          {
             m_timeline.timer.visible = true;
-            m_timer.Start(_loc17_,cbFuncEndTimer);
+            m_timer.Start(_loc18_,cbFuncEndTimer);
          }
          m_start = 1;
          m_timeline.stage.removeEventListener(Event.ENTER_FRAME,updatePhaseInitStart);

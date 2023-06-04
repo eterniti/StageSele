@@ -22,7 +22,13 @@ package STAGESELE_fla
       
       public var stage_new_1:MovieClip;
       
+      public var stage_new_11:MovieClip;
+      
       public var stage_new_0:MovieClip;
+      
+      public var stage_new_10:MovieClip;
+      
+      public var stage_new_9:MovieClip;
       
       public function mc_stage_new2_34()
       {

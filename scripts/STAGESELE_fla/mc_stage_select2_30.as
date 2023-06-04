@@ -10,6 +10,8 @@ package STAGESELE_fla
       
       public var stage_icn_set0:MovieClip;
       
+      public var stage_icn_set3:MovieClip;
+      
       public var stage_icn_set2:MovieClip;
       
       public function mc_stage_select2_30()
