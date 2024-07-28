@@ -6,4 +6,4 @@ Compile instructions: <br>
 - An existing STAGESELE.iggy from the game must be placed on the base directory. It should be from the same version that the "currently based" version listed at the bottom of this readme. <br>
 - Just run compile.bat, the .iggy file you placed will be updated in place with the code. The .bat will also try to automatically copy it to the location of a default DBXV2 installation. You may want to modify the path in compile.bat if you have your game in a different location. <br>
 
-Currently based on game version: 1.20.1 (SHA256: D4DF3ABC947E01734856BA8CBE53F9A5547E3786E1EE4FE45D879C018EA1E49C)
+Currently based on game version: 1.22.1 (SHA256: 46FF3255127E67F6A9FA270A69FFA2259E24DF9889945A54349E5F661D5C1AEC)
