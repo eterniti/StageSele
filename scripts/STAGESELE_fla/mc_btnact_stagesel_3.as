@@ -11,7 +11,7 @@ package STAGESELE_fla
       public function mc_btnact_stagesel_3()
       {
          super();
-         addFrameScript(8,frame9,58,frame59,69,frame70,77,frame78);
+         addFrameScript(8,this.frame9,58,this.frame59,69,this.frame70,77,this.frame78);
       }
       
       function frame9() : *

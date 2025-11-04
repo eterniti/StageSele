@@ -21,7 +21,7 @@ package STAGESELE_fla
       public function mc_inact_stage_9()
       {
          super();
-         addFrameScript(29,frame30,35,frame36);
+         addFrameScript(29,this.frame30,35,this.frame36);
       }
       
       function frame30() : *

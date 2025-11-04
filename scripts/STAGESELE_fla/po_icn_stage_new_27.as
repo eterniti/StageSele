@@ -2,16 +2,16 @@ package STAGESELE_fla
 {
    import flash.display.MovieClip;
    
-   public dynamic class mc_inact_stageimage_11 extends MovieClip
+   public dynamic class po_icn_stage_new_27 extends MovieClip
    {
        
       
-      public var stageimg:MovieClip;
+      public var nest_new:MovieClip;
       
-      public function mc_inact_stageimage_11()
+      public function po_icn_stage_new_27()
       {
          super();
-         addFrameScript(7,this.frame8,13,this.frame14,19,this.frame20);
+         addFrameScript(7,this.frame8,15,this.frame16,23,this.frame24);
       }
       
       function frame8() : *
@@ -19,12 +19,12 @@ package STAGESELE_fla
          stop();
       }
       
-      function frame14() : *
+      function frame16() : *
       {
          stop();
       }
       
-      function frame20() : *
+      function frame24() : *
       {
          stop();
       }

@@ -2,18 +2,16 @@ package STAGESELE_fla
 {
    import flash.display.MovieClip;
    
-   public dynamic class mc_select2_33 extends MovieClip
+   public dynamic class mc_btnact_stagesel2_39 extends MovieClip
    {
        
       
       public var btn_act:MovieClip;
       
-      public var stage_ef01:MovieClip;
-      
-      public function mc_select2_33()
+      public function mc_btnact_stagesel2_39()
       {
          super();
-         addFrameScript(8,frame9,58,frame59,69,frame70);
+         addFrameScript(8,this.frame9,58,this.frame59,69,this.frame70,77,this.frame78);
       }
       
       function frame9() : *
@@ -27,6 +25,11 @@ package STAGESELE_fla
       }
       
       function frame70() : *
+      {
+         stop();
+      }
+      
+      function frame78() : *
       {
          stop();
       }

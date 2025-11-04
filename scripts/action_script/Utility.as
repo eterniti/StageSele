@@ -70,28 +70,86 @@ package action_script
          }
       }
       
-      public static function SetAutoSizedhtmlText(param1:TextField, param2:String, param3:Number = 0) : void
+      public static function UpdateAutoScaledText(param1:TextField, param2:AutoSizeTextInfo) : void
       {
-         var _loc5_:Number = NaN;
-         var _loc6_:String = null;
-         var _loc7_:Number = NaN;
-         var _loc4_:MovieClip = param1.parent as MovieClip;
-         if(!_loc4_)
+         var _loc4_:Number = NaN;
+         if(!param2.default_initialized)
+         {
+            param2.Initialize(param1);
+         }
+         param1.autoSize = param2.default_align;
+         param1.wordWrap = false;
+         param1.scaleX = param2.default_scale_x;
+         param1.scaleY = param2.default_scale_y;
+         var _loc3_:Number = 1;
+         if(param2.default_width < param1.width)
+         {
+            _loc4_ = param2.default_width / param1.width;
+            if(_loc3_ > _loc4_)
+            {
+               _loc3_ = _loc4_;
+            }
+         }
+         if(param2.default_height < param1.height)
+         {
+            _loc4_ = param2.default_height / param1.height;
+            if(_loc3_ > _loc4_)
+            {
+               _loc3_ = _loc4_;
+            }
+         }
+         if(_loc3_ < 0.1)
+         {
+            _loc3_ = 0.1;
+         }
+         if(_loc3_ < 1)
+         {
+            param1.scaleX = param2.default_scale_x * _loc3_;
+            param1.scaleY = param2.default_scale_y * _loc3_;
+         }
+         if(param2.default_align == "right")
+         {
+            param1.x = param2.default_x + param2.default_width - param1.width;
+         }
+         else if(param2.default_align == "center")
+         {
+            param1.x = param2.default_x + (param2.default_width - param1.width) / 2;
+         }
+      }
+      
+      public static function SetAutoSizedhtmlText(param1:TextField, param2:String, param3:Number = 0, param4:AutoSizeTextInfo = null) : void
+      {
+         var _loc6_:Number = NaN;
+         var _loc7_:String = null;
+         var _loc8_:Number = NaN;
+         var _loc5_:MovieClip = param1.parent as MovieClip;
+         if(!_loc5_)
          {
             return;
          }
-         if(_loc4_.user_add_property_default_width == undefined)
+         if(param4)
          {
-            _loc5_ = param1.width;
-            _loc6_ = param1.getTextFormat().align;
-            _loc7_ = param1.x;
-            _loc4_.user_add_property_default_width = _loc5_;
-            _loc4_.user_add_property_default_align = _loc6_;
-            _loc4_.user_add_property_default_x = _loc7_;
+            if(!param4.default_initialized)
+            {
+               param4.Initialize(param1);
+               param1.autoSize = param4.default_align;
+               param1.wordWrap = false;
+            }
+            SetSizedhtmlText(param1,param2,param4.default_width,param4.default_align,param4.default_x);
+            return;
+         }
+         if(_loc5_.user_add_property_default_width == undefined)
+         {
+            _loc6_ = param1.width;
+            _loc7_ = param1.getTextFormat().align;
+            _loc8_ = param1.x;
+            _loc5_.user_add_property_default_width = _loc6_;
+            _loc5_.user_add_property_default_align = _loc7_;
+            _loc5_.user_add_property_default_x = _loc8_;
             param1.autoSize = param1.getTextFormat().align;
             param1.wordWrap = false;
          }
-         SetSizedhtmlText(param1,param2,_loc4_.user_add_property_default_width,_loc4_.user_add_property_default_align,_loc4_.user_add_property_default_x);
+         SetSizedhtmlText(param1,param2,_loc5_.user_add_property_default_width,_loc5_.user_add_property_default_align,_loc5_.user_add_property_default_x);
       }
       
       public static function SetSizedhtmlText(param1:TextField, param2:String, param3:Number, param4:String, param5:Number) : void

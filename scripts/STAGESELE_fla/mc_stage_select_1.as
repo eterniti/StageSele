@@ -6,32 +6,32 @@ package STAGESELE_fla
    {
        
       
-      public var stage_icn_set1:MovieClip;
-      
       public var stage_icn_set0:MovieClip;
       
-      public var stage_icn_set3:MovieClip;
+      public var stage_icn_set1:MovieClip;
+      
+      public var stage_icn_set10:MovieClip;
       
       public var stage_icn_set2:MovieClip;
       
-      public var stage_icn_set5:MovieClip;
+      public var stage_icn_set3:MovieClip;
       
       public var stage_icn_set4:MovieClip;
       
-      public var stage_icn_set7:MovieClip;
+      public var stage_icn_set5:MovieClip;
       
       public var stage_icn_set6:MovieClip;
       
-      public var stage_icn_set9:MovieClip;
+      public var stage_icn_set7:MovieClip;
       
       public var stage_icn_set8:MovieClip;
       
-      public var stage_icn_set10:MovieClip;
+      public var stage_icn_set9:MovieClip;
       
       public function mc_stage_select_1()
       {
          super();
-         addFrameScript(27,frame28,33,frame34,39,frame40);
+         addFrameScript(27,this.frame28,33,this.frame34,39,this.frame40);
       }
       
       function frame28() : *

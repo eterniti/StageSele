@@ -2,7 +2,7 @@ package STAGESELE_fla
 {
    import flash.display.MovieClip;
    
-   public dynamic class mc_stage_icn_set_2 extends MovieClip
+   public dynamic class mc_stage_icn_set2_38 extends MovieClip
    {
        
       
@@ -12,7 +12,7 @@ package STAGESELE_fla
       
       public var nest_stage_sel3:MovieClip;
       
-      public function mc_stage_icn_set_2()
+      public function mc_stage_icn_set2_38()
       {
          super();
          addFrameScript(7,this.frame8,15,this.frame16,23,this.frame24);

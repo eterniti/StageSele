@@ -15,7 +15,7 @@ package STAGESELE_fla
       public function mc_select_23()
       {
          super();
-         addFrameScript(8,frame9,58,frame59,69,frame70);
+         addFrameScript(8,this.frame9,58,this.frame59,69,this.frame70);
       }
       
       function frame9() : *
